@@ -1,0 +1,36 @@
+# Rules
+
+- Placeholder tests and fabricated expected rows -> fixtures come from RFC sections, and tests compare complete results.
+- Compile failures counted as killed mutants -> require successful compilation before a behavioural kill.
+- Byte fields shifted at UInt8 width -> widen before shifting, and exercise a nonzero high byte.
+- Little-endian UUID conversion skipped bytes 6/7 -> test all three reversed fields and round trips.
+- Guessed std.io.open and block variable scope -> use prelude open; declare file contents outside the with block.
+- Guessed upstream path case -> query the repository tree before fetching a source file.
+- Array positional constructor rejected -> initialize fixed arrays with a typed bracket literal.
+- Assigning a String from its own slice aliases -> materialize a temporary before replacing the owner.
+- Runtime Int shift on UInt128 rejected -> cast the shift count to the SIMD scalar type.
+- repo-net build queued an unrelated GPU embedding job -> stop its PID after local structural indexing; report the incomplete network build.
+- Convenience uuid6/uuid7 lacked persistent clock/counter state -> expose caller-owned generators; distinguish one-shot helpers from monotonic instances.
+- Optional UInt64 does not coerce integer literals -> use an Int adapter and explicit conversion to the UUID node bits.
+- Mutants launched before the current baseline compiled -> require a fresh successful case build before starting mutation tests.
+- Background job died with the harness process group -> detach persistent jobs with setsid and monitor them.
+- Self-authored expected messages repeated the same article bug -> copy complete CPython text and verify against its pinned source; 8-bit errors say "an".
+- Mutant expressions contained the pipe delimiter -> mutate a delimiter-free subexpression; malformed rows must never count as kills.
+- UUID hash truncated UInt128 to Int -> match CPython positive-integer hash reduction and compare it in differential tests.
+- Folded ASCII arithmetic could accept @ as a digit -> guard explicit decimal and a-f ranges before accumulating.
+- Incomplete upstream license stub -> fetch the full pinned upstream LICENSE, never ship an ellipsis notice.
+- Promoted local verifier kept an absolute home path -> use HOME or a toolchain override, then run the repository audit.
+- Nested skill reads were invisible to the writing hook -> retain the skill receipt and use a supported file-write path without changing shared hooks.
+- A limited file listing missed a tracked fabricated generator -> check both git ls-files and the filesystem before claiming deletion.
+- A second mutation run began after a failed baseline -> the mutation runner now builds and passes the unmodified test suite before touching source.
+- A TERM restore trap continued its loop -> signal traps exit; an EXIT trap restores the source exactly once.
+- Unlabelled generator assertions obscured a failed check -> compare complete UUID bits and give each injected-state check its own message.
+- Strip and digit rules assumed equal to CPython's int() -> list the reference's accepted sets from its source and run an edge list (Unicode spaces, Unicode digits, U+001C..U+001F) through the differential before writing the parser.
+- Struct shipped without Hashable/Writable, so it could not be a Dict key or printed -> the API test puts every public value type into a Dict, a Set, print and String() the day it is written.
+- Expected error text typed by hand (U+066A is printable, so CPython does not escape it; a "32 digit" row had 35) -> expected texts come from the oracle, counts from len(), never from memory.
+- Benchmark row at 0.0003 ns/op (compiler folded the loop) -> a row under 0.5 ns/op is suspect: feed the result into the checksum or drop the row, and say so in design.md.
+- Mutants whose pattern contains `|` break the FROM|TO format, and a wrong prefix offset that falls back to the slow path survives as an equivalent mutant -> patterns without `|`, and every new fast path gets a mutant that changes the result, not only the route.
+- Background job started as `cmd &` inside a backgrounded command reported "completed" at launch -> use `run_in_background` on the command itself and wait for its exit line in the log file.
+- Python tables (Nd, printable) can differ between CPython versions -> the generated `_unicode.mojo` names its Unicode version; fuzz rows use codepoints stable since Unicode 13.
+- Oracle script used uuid.uuid6/7/8 (CPython 3.14 only); the local gate passed and the Ubuntu 24.04 container (Python 3.12) failed -> a new oracle call is checked on the CI image with ci-local before "green"; scripts/env.sh resolves a 3.14 interpreter (system python3, else `uv run --python 3.14`).
+- Reported 0.2 ns/op for bytes()/bytes_le() while knowing the loop was folded (it read one byte of the result) -> a bench row consumes the whole result (sum every byte into a sink) or is dropped; a sub-ns row is never reported as a measurement.

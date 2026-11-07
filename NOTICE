@@ -1,0 +1,8 @@
+mojo-uuid
+Copyright 2026 AMARBARO · amarbaro.org labs <dev@amarbaro.org>
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+PSF licensed portion: Lib/uuid.py (CPython 3.14)
+CPython copyright: Copyright (c) 2001-2025 Python Software Foundation.
+See LICENSE-PSF for the complete upstream license and license history.
+RFC test examples: RFC 9562, IETF Trust and the persons identified as authors.

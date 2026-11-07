@@ -1,0 +1,24 @@
+src/uuid/__init__.mojo|var h = Md5()|var h = Sha1()
+src/uuid/__init__.mojo|h.update(Span(nb))|pass
+src/uuid/__init__.mojo|h.update(name.as_bytes())|pass
+src/uuid/__init__.mojo|pair[0] << 4|pair[0] << 3
+src/uuid/__init__.mojo|var is_letter = l.le(5)|var is_letter = l.le(6)
+src/uuid/__init__.mojo|.reduce_and()|.reduce_or()
+src/uuid/__init__.mojo|elif n == 38 and b[0] == 123 and b[37] == 125:|elif n == 38 and b[0] == 123:
+src/uuid/__init__.mojo|var d = c - 48|var d = c - 47
+src/uuid/__init__.mojo|if d < 10 or d > 15:|if d < 10 or d > 16:
+src/uuid/__init__.mojo|p.unsafe_store[alignment=1](0, byte_swap(UInt64(self._int >> 64)))|p.unsafe_store[alignment=1](0, UInt64(self._int >> 64))
+src/uuid/__init__.mojo|unsafe_offset(6).unsafe_bitcast|unsafe_offset(5).unsafe_bitcast
+src/uuid/__init__.mojo|nib.gt(9)|nib.gt(10)
+src/uuid/__init__.mojo|return nib + 48|return nib + 49
+src/uuid/__init__.mojo|p.unsafe_offset(24).unsafe_store|p.unsafe_offset(23).unsafe_store
+src/uuid/__init__.mojo|_stamp(_be_u128(h.digest()), 3)|_stamp(_be_u128(h.digest()), 4)
+src/uuid/__init__.mojo|(UInt128(version) << 76)|(UInt128(version) << 75)
+src/uuid/__init__.mojo|if next_counter > 0x3ffffffffff:|if next_counter > 0x7ffffffffff:
+src/uuid/__init__.mojo|next_counter += 1|next_counter += 2
+src/uuid/__init__.mojo|digit or (after_prefix and i == lo)|digit or False
+src/uuid/__init__.mojo|(4 if c <= 0xffff else 8)|(4 if c <= 0xfff else 8)
+src/uuid/_unicode.mojo|return d if d < 10 else -1|return d if d < 11 else -1
+src/uuid/__init__.mojo|negative = cps[lo] == 45|negative = False
+src/uuid/_unicode.mojo|or cp == 0x3000|or cp == 0x3001
+src/uuid/__init__.mojo|timestamp <= self.last_timestamp:|timestamp < self.last_timestamp:

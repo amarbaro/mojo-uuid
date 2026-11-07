@@ -1,0 +1,4 @@
+RFC 9562 Appendix A/B, rfc-editor.org/rfc/rfc9562.txt
+Namespace constants: RFC 9562 Section 6.6, Table 3.
+NIL/MAX: RFC 9562 Sections 5.9 and 5.10.
+Appendix A.1 is skipped: UUIDv1 generation is outside this library.
