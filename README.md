@@ -9,7 +9,9 @@ Parses and reports errors like CPython 3.14's `uuid.UUID`, and checks generators
 A `UUID` is 16 inline bytes, hashable, comparable and printable. Parsing a canonical UUID takes
 9 ns and formatting one 29 ns, against 929 ns and 403 ns in CPython 3.14.9 (`docs/design.md`).
 Requires Linux libc `getrandom` and `clock_gettime`, Mojo 1.2, and mojo-hashlib >=0.1.2,<0.2.
-Also tested on the 1.3 nightly of 2026-11-03.
+
+Install: `pixi workspace channel add https://conda.modular.com/max https://prefix.dev/amarbaro/amarbaro`, then `pixi add mojo-uuid` (import `uuid`). From source: `git clone https://github.com/amarbaro/mojo-uuid`, then `mojo run -I mojo-uuid/src app.mojo`.
+Toolchains: Mojo 1.2 stable, and the nightly 1.3.0.dev2026110805 in the weekly [mojo-libs](https://github.com/amarbaro/mojo-libs) matrix (36 libraries on stable, 35 on nightly).
 
 From a clone, with a mojo-hashlib checkout beside it (`scripts/env.sh` clones the pinned tag otherwise):
 
