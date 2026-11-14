@@ -1,0 +1,5 @@
+name = "mojo-uuid"
+version = "0.1.2"
+description = "RFC UUID values, parsing, formatting and generation for Mojo"
+tags = ["mojo", "uuid"]
+tins = ["mojo-hashlib"]
